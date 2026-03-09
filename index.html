@@ -3,177 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sage Hourihan</title>
+  <title>hourihan.xyz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
   <style>
-    :root {
-      --bg:    #f0ece3;
-      --ink:   #1a1916;
-      --muted: #7a7570;
-      --mark:  #b0ab9f;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --bg:    #141412;
-        --ink:   #ece8df;
-        --muted: #7a7570;
-        --mark:  #3a3835;
-      }
-    }
-
-    [data-theme="dark"] {
-      --bg:    #141412;
-      --ink:   #ece8df;
-      --muted: #7a7570;
-      --mark:  #3a3835;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html, body {
-      height: 100%;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.4s, color 0.4s;
-    }
-
-    /* ── Corner marks ─────────────────────────────────────── */
-    .mark {
-      position: fixed;
-      width: 22px;
-      height: 22px;
-      border-color: var(--mark);
-      border-style: solid;
-      transition: border-color 0.4s;
-    }
-    .mark--tl { top: 28px; left: 28px; border-width: 1px 0 0 1px; }
-    .mark--br { bottom: 28px; right: 28px; border-width: 0 1px 1px 0; }
-
-    /* ── Content ──────────────────────────────────────────── */
-    .content {
-      text-align: center;
+    /* ── Homepage-specific ─────────────────────────────────── */
+    .home {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 18px;
+      padding: 120px 40px 80px;
+      text-align: center;
     }
 
-    .name {
+    .site-title {
       font-family: "Josefin Sans", sans-serif;
       font-weight: 100;
-      font-size: clamp(1.6rem, 4vw, 2.6rem);
-      letter-spacing: 0.28em;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      line-height: 1;
       color: var(--ink);
+      margin-bottom: 48px;
       transition: color 0.4s;
     }
 
-    .rule {
-      width: 28px;
-      height: 1px;
-      background: var(--mark);
-      transition: background 0.4s;
-    }
-
-    .meta {
+    .manifesto {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 6px;
+      gap: 32px;
+      max-width: 560px;
     }
 
-    .title, .email a {
+    .manifesto-block h3 {
       font-family: "IBM Plex Mono", monospace;
       font-weight: 300;
-      font-size: clamp(0.52rem, 1.2vw, 0.62rem);
-      letter-spacing: 0.04em;
-      text-transform: lowercase;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--muted);
+      margin-bottom: 10px;
       transition: color 0.4s;
     }
 
-    .email a {
-      text-decoration: none;
-    }
-
-    .email a:hover {
-      color: var(--ink);
-    }
-
-    /* ── Toggle ───────────────────────────────────────────── */
-    .toggle {
-      position: fixed;
-      bottom: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: none;
-      border: none;
-      cursor: pointer;
+    .manifesto-block p {
       font-family: "IBM Plex Mono", monospace;
-      font-size: 0.52rem;
-      letter-spacing: 0.08em;
-      text-transform: lowercase;
-      color: var(--mark);
-      padding: 4px 0;
-      transition: color 0.2s;
+      font-weight: 300;
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--ink);
+      transition: color 0.4s;
     }
 
-    .toggle:hover { color: var(--muted); }
+    .manifesto-block em {
+      font-style: italic;
+      font-weight: 300;
+    }
   </style>
 </head>
 <body>
 
-  <div class="mark mark--tl"></div>
-  <div class="mark mark--br"></div>
+  <nav>
+    <a href="/">home</a>
+    <a href="/blog/">blog</a>
+    <a href="/now/">now</a>
+    <a href="/links/">links</a>
+    <a href="/about/">about</a>
+  </nav>
 
-  <div class="content">
-    <div class="name">Sage Hourihan</div>
-    <div class="rule"></div>
-    <div class="meta">
-      <div class="title">Sr. Programmer Analyst &nbsp;·&nbsp; EDI Specialist</div>
-      <div class="email"><a href="mailto:sage@hourihan.xyz">sage@hourihan.xyz</a></div>
+  <div class="home">
+    <h1 class="site-title">Hourihan.XYZ</h1>
+
+    <div class="manifesto">
+      <div class="manifesto-block">
+        <h3>What is this?</h3>
+        <p>A brain dump with a domain name. I miss the early days of the internet where everyone had their own personal site (shout out my childhood friend Luke for showing me freewebs). This is simply that, except I actually know how to write code now.</p>
+      </div>
+      <div class="manifesto-block">
+        <h3>The One Guiding Principle</h3>
+        <p><em>I build for myself and no one else.</em> The moment I worry about optimizing this site for others I have lost sight of what this project is about.</p>
+      </div>
     </div>
   </div>
 
   <button class="toggle" id="themeToggle" aria-label="Toggle colour mode"></button>
 
-  <script>
-    const toggle = document.getElementById('themeToggle');
-    const root   = document.documentElement;
-    const sys    = window.matchMedia('(prefers-color-scheme: dark)');
-
-    function isDark() {
-      const stored = localStorage.getItem('theme');
-      return stored ? stored === 'dark' : sys.matches;
-    }
-
-    function apply(dark) {
-      root.setAttribute('data-theme', dark ? 'dark' : 'light');
-      toggle.textContent = dark ? 'light' : 'dark';
-    }
-
-    apply(isDark());
-
-    toggle.addEventListener('click', () => {
-      const dark = root.getAttribute('data-theme') !== 'dark';
-      localStorage.setItem('theme', dark ? 'dark' : 'light');
-      apply(dark);
-    });
-
-    sys.addEventListener('change', e => {
-      if (!localStorage.getItem('theme')) apply(e.matches);
-    });
-  </script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

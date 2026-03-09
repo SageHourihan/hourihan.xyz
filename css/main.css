@@ -1,0 +1,106 @@
+/* ── Variables ─────────────────────────────────────────── */
+:root {
+  --bg:    #ffffff;
+  --ink:   #1a1916;
+  --muted: #7a7570;
+  --mark:  #d0cdc8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:    #0f0f0f;
+    --ink:   #ece8df;
+    --muted: #7a7570;
+    --mark:  #2a2a2a;
+  }
+}
+
+[data-theme="dark"] {
+  --bg:    #0f0f0f;
+  --ink:   #ece8df;
+  --muted: #7a7570;
+  --mark:  #2a2a2a;
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  transition: background 0.4s, color 0.4s;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--muted);
+}
+
+/* ── Nav ───────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--mark);
+  background: var(--bg);
+  transition: background 0.4s, border-color 0.4s;
+  z-index: 10;
+}
+
+nav a {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--ink);
+}
+
+/* ── Page container ────────────────────────────────────── */
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 120px 40px 80px;
+}
+
+/* ── Theme toggle ──────────────────────────────────────── */
+.toggle {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--mark);
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.toggle:hover { color: var(--muted); }
