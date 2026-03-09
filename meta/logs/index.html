@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>logs — meta — hourihan.xyz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    .meta-page {
+      font-family: "Space Mono", monospace;
+    }
+
+    .meta-page h1 {
+      font-family: "Space Mono", monospace;
+      font-weight: 700;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+      margin-bottom: 6px;
+    }
+
+    .meta-subtitle {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-bottom: 56px;
+      letter-spacing: 0.04em;
+    }
+
+    .meta-section-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--mark);
+      padding-bottom: 8px;
+    }
+
+    .log {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .log-entry {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--mark);
+      font-size: 0.78rem;
+      line-height: 1.6;
+    }
+
+    .log-entry:last-child {
+      border-bottom: none;
+    }
+
+    .log-date {
+      color: var(--muted);
+      font-size: 0.65rem;
+      padding-top: 2px;
+      white-space: nowrap;
+    }
+
+    .log-body {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .log-tag {
+      display: inline-block;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--mark);
+      padding: 1px 5px;
+      margin-bottom: 4px;
+      width: fit-content;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main class="page meta-page">
+    <h1>/meta/logs</h1>
+
+    <p class="meta-section-label">log</p>
+    <div class="log">
+      <div class="log-entry">
+        <span class="log-date">2026-03-09</span>
+        <div class="log-body">
+          <span class="log-tag">feature</span>
+          added the links page and the meta section. this page is the first entry.
+        </div>
+      </div>
+      <div class="log-entry">
+        <span class="log-date">2026-03-08</span>
+        <div class="log-body">
+          <span class="log-tag">fix</span>
+          dark/light mode toggle working properly across all pages. persists on refresh.
+        </div>
+      </div>
+      <div class="log-entry">
+        <span class="log-date">2026-03-05</span>
+        <div class="log-body">
+          <span class="log-tag">refactor</span>
+          extracted nav into a shared component. no more copy-pasting html across every page.
+        </div>
+      </div>
+      <div class="log-entry">
+        <span class="log-date">2026-03-01</span>
+        <div class="log-body">
+          <span class="log-tag">launch</span>
+          first commit. skeleton is up. about, now, and home pages exist. nothing else does yet.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <button class="toggle" id="themeToggle" aria-label="Toggle colour mode"></button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
