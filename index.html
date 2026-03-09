@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sage Hourihan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:    #f0ece3;
+      --ink:   #1a1916;
+      --muted: #7a7570;
+      --mark:  #b0ab9f;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg:    #141412;
+        --ink:   #ece8df;
+        --muted: #7a7570;
+        --mark:  #3a3835;
+      }
+    }
+
+    [data-theme="dark"] {
+      --bg:    #141412;
+      --ink:   #ece8df;
+      --muted: #7a7570;
+      --mark:  #3a3835;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    /* ── Corner marks ─────────────────────────────────────── */
+    .mark {
+      position: fixed;
+      width: 22px;
+      height: 22px;
+      border-color: var(--mark);
+      border-style: solid;
+      transition: border-color 0.4s;
+    }
+    .mark--tl { top: 28px; left: 28px; border-width: 1px 0 0 1px; }
+    .mark--br { bottom: 28px; right: 28px; border-width: 0 1px 1px 0; }
+
+    /* ── Content ──────────────────────────────────────────── */
+    .content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .name {
+      font-family: "Josefin Sans", sans-serif;
+      font-weight: 100;
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--ink);
+      transition: color 0.4s;
+    }
+
+    .rule {
+      width: 28px;
+      height: 1px;
+      background: var(--mark);
+      transition: background 0.4s;
+    }
+
+    .meta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .title, .email a {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: clamp(0.52rem, 1.2vw, 0.62rem);
+      letter-spacing: 0.04em;
+      text-transform: lowercase;
+      color: var(--muted);
+      transition: color 0.4s;
+    }
+
+    .email a {
+      text-decoration: none;
+    }
+
+    .email a:hover {
+      color: var(--ink);
+    }
+
+    /* ── Toggle ───────────────────────────────────────────── */
+    .toggle {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.52rem;
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+      color: var(--mark);
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+
+    .toggle:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <div class="mark mark--tl"></div>
+  <div class="mark mark--br"></div>
+
+  <div class="content">
+    <div class="name">Sage Hourihan</div>
+    <div class="rule"></div>
+    <div class="meta">
+      <div class="title">Sr. Programmer Analyst &nbsp;·&nbsp; EDI Specialist</div>
+      <div class="email"><a href="mailto:sage@hourihan.xyz">sage@hourihan.xyz</a></div>
+    </div>
+  </div>
+
+  <button class="toggle" id="themeToggle" aria-label="Toggle colour mode"></button>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const root   = document.documentElement;
+    const sys    = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function isDark() {
+      const stored = localStorage.getItem('theme');
+      return stored ? stored === 'dark' : sys.matches;
+    }
+
+    function apply(dark) {
+      root.setAttribute('data-theme', dark ? 'dark' : 'light');
+      toggle.textContent = dark ? 'light' : 'dark';
+    }
+
+    apply(isDark());
+
+    toggle.addEventListener('click', () => {
+      const dark = root.getAttribute('data-theme') !== 'dark';
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+      apply(dark);
+    });
+
+    sys.addEventListener('change', e => {
+      if (!localStorage.getItem('theme')) apply(e.matches);
+    });
+  </script>
+</body>
+</html>
