@@ -9,6 +9,15 @@ $(function () {
     });
   });
 
+  /* ── Back link ──────────────────────────────────────────── */
+  const parts = window.location.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+  const isHome  = parts.length === 0;
+  const isLinks = parts.length === 1 && parts[0] === 'links';
+  if (!isHome && !isLinks) {
+    const back = parts.length > 1 ? '/' + parts.slice(0, -1).join('/') : '/links';
+    $('main').prepend('<a href="' + back + '" style="display:inline-block;font-size:0.65rem;letter-spacing:0.06em;color:var(--muted);margin-bottom:40px;">← ' + back + '</a>');
+  }
+
   /* ── Theme toggle ──────────────────────────────────────── */
   const $toggle = $('#themeToggle');
   const $root   = $('html');

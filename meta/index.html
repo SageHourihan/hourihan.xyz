@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>meta — hourihan.xyz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    .meta-page {
+      font-family: "Space Mono", monospace;
+    }
+
+    .meta-page h1 {
+      font-family: "Space Mono", monospace;
+      font-weight: 700;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+      margin-bottom: 6px;
+    }
+
+    .meta-subtitle {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-bottom: 56px;
+      letter-spacing: 0.04em;
+    }
+
+    .meta-section-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--mark);
+      padding-bottom: 8px;
+    }
+
+    .backlog {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+
+    .backlog-item {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 0.78rem;
+      line-height: 1.6;
+    }
+
+    .backlog-item::before {
+      content: "–";
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .backlog-item.done {
+      color: var(--muted);
+      text-decoration: line-through;
+      text-decoration-color: var(--mark);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main class="page meta-page">
+    <h1>/meta</h1>
+    <p class="meta-subtitle">site log, devlog, and backlog. catch-all for everything about this place.</p>
+
+    <p class="meta-section-label">pages</p>
+    <div class="backlog" style="margin-bottom:48px;">
+      <div class="backlog-item"><a href="/meta/logs">/meta/logs</a> — site changelog and devlog</div>
+    </div>
+
+    <p class="meta-section-label">backlog</p>
+    <div class="backlog">
+      <div class="backlog-item">rss feed</div>
+      <div class="backlog-item">ideas page</div>
+      <div class="backlog-item">syntax highlighting for any code blocks</div>
+      <div class="backlog-item">search — maybe. probably overkill for now</div>
+      <div class="backlog-item">figure out a build/deploy pipeline that isn't embarrassing</div>
+      <div class="backlog-item done">nav component</div>
+      <div class="backlog-item done">dark mode</div>
+    </div>
+
+  </main>
+
+  <button class="toggle" id="themeToggle" aria-label="Toggle colour mode"></button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
