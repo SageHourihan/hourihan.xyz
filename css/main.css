@@ -98,9 +98,9 @@ nav a.active {
   font-size: 0.52rem;
   letter-spacing: 0.08em;
   text-transform: lowercase;
-  color: var(--mark);
+  color: var(--muted);
   padding: 4px 0;
   transition: color 0.2s;
 }
 
-.toggle:hover { color: var(--muted); }
+.toggle:hover { color: var(--ink); }

@@ -1,5 +1,14 @@
 $(function () {
 
+  /* ── Nav ────────────────────────────────────────────────── */
+  $('#nav-placeholder').load('/components/nav.html', function () {
+    const path = window.location.pathname.replace(/\/$/, '') || '/';
+    $('nav a').each(function () {
+      const href = $(this).attr('href').replace(/\/$/, '') || '/';
+      if (href === path) $(this).addClass('active');
+    });
+  });
+
   /* ── Theme toggle ──────────────────────────────────────── */
   const $toggle = $('#themeToggle');
   const $root   = $('html');
@@ -25,13 +34,6 @@ $(function () {
 
   sys.addEventListener('change', function (e) {
     if (!localStorage.getItem('theme')) applyTheme(e.matches);
-  });
-
-  /* ── Active nav link ───────────────────────────────────── */
-  const path = window.location.pathname.replace(/\/$/, '') || '/';
-  $('nav a').each(function () {
-    const href = $(this).attr('href').replace(/\/$/, '') || '/';
-    if (href === path) $(this).addClass('active');
   });
 
 });
