@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>/b/ — hourihan.xyz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    .b-post h1 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .b-post-date {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 40px;
+      display: block;
+    }
+
+    .b-post p {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .b-post h2 {
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      margin: 32px 0 12px;
+    }
+
+    .b-post h3 {
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 28px 0 10px;
+    }
+
+    .b-post blockquote {
+      border-left: 2px solid var(--mark);
+      padding-left: 16px;
+      color: var(--muted);
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    .b-post pre {
+      background: var(--mark);
+      padding: 16px;
+      overflow-x: auto;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      margin: 20px 0;
+    }
+
+    .b-post code {
+      background: var(--mark);
+      padding: 1px 5px;
+      font-size: 0.82em;
+    }
+
+    .b-post pre code {
+      background: none;
+      padding: 0;
+    }
+
+    .b-post hr {
+      border: none;
+      border-top: 1px solid var(--mark);
+      margin: 36px 0;
+    }
+
+    .b-post a {
+      color: var(--ink);
+      border-bottom: 1px solid var(--mark);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+
+    .b-post a:hover {
+      border-color: var(--ink);
+    }
+
+    .b-not-found {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main class="page">
+    <article class="b-post" id="post-body">
+      <p class="b-not-found">loading...</p>
+    </article>
+  </main>
+
+  <button class="toggle" id="themeToggle" aria-label="Toggle colour mode"></button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/md.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    (function () {
+      const parts = window.location.pathname.replace(/\/$/, '').split('/');
+      const slug = parts[parts.length - 1];
+
+      fetch('/b/posts/' + slug + '.md')
+        .then(function (r) {
+          if (!r.ok) throw new Error(r.status);
+          return r.text();
+        })
+        .then(function (md) {
+          document.getElementById('post-body').innerHTML = renderMarkdown(md);
+
+          // set page title from first h1
+          const h1 = document.querySelector('.b-post h1');
+          if (h1) document.title = h1.textContent + ' — hourihan.xyz';
+        })
+        .catch(function () {
+          document.getElementById('post-body').innerHTML =
+            '<p class="b-not-found">post not found.</p>';
+        });
+    })();
+  </script>
+</body>
+</html>
