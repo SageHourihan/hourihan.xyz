@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>meta — hourihan.xyz</title>
+  <title>ideas — hourihan.xyz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -39,14 +39,13 @@
       padding-bottom: 8px;
     }
 
-    .backlog {
+    .ideas {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 48px;
     }
 
-    .backlog-item {
+    .idea-item {
       display: flex;
       align-items: baseline;
       gap: 10px;
@@ -54,16 +53,10 @@
       line-height: 1.6;
     }
 
-    .backlog-item::before {
+    .idea-item::before {
       content: "–";
       color: var(--muted);
       flex-shrink: 0;
-    }
-
-    .backlog-item.done {
-      color: var(--muted);
-      text-decoration: line-through;
-      text-decoration-color: var(--mark);
     }
   </style>
 </head>
@@ -72,27 +65,16 @@
   <div id="nav-placeholder"></div>
 
   <main class="page meta-page">
-    <h1>/meta</h1>
-    <p class="meta-subtitle">site log, devlog, and backlog. catch-all for everything about this place.</p>
+    <h1>/ideas</h1>
+    <p class="meta-subtitle">ideas i have. some explained, some not. updated whenever.</p>
 
-    <p class="meta-section-label">pages</p>
-    <div class="backlog" style="margin-bottom:48px;">
-      <div class="backlog-item"><a href="/meta/logs">/meta/logs</a> — site changelog and devlog</div>
+    <p class="meta-section-label">ideas</p>
+    <div class="ideas">
+      <div class="idea-item">homelab</div>
+      <div class="idea-item">shoe racks</div>
+      <div class="idea-item">behind the couch shelf</div>
+      <div class="idea-item">update budget</div>
     </div>
-
-    <p class="meta-section-label">backlog</p>
-    <div class="backlog">
-      <div class="backlog-item">homeassistant server rebuild</div>
-      <div class="backlog-item">/b/</div>
-      <div class="backlog-item">/meta/logs - build off git history</div>
-      <div class="backlog-item done">ideas page</div>
-      <div class="backlog-item">syntax highlighting for any code blocks</div>
-      <div class="backlog-item">search — maybe. probably overkill for now</div>
-      <div class="backlog-item">figure out a build/deploy pipeline that isn't embarrassing</div>
-      <div class="backlog-item done">nav component</div>
-      <div class="backlog-item done">dark mode</div>
-    </div>
-
   </main>
 
   <button class="toggle" id="themeToggle" aria-label="Toggle colour mode"></button>
