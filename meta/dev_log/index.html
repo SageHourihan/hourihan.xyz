@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dev_log — meta — hourihan.xyz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    .meta-page {
+      font-family: "Space Mono", monospace;
+    }
+
+    .meta-page h1 {
+      font-family: "Space Mono", monospace;
+      font-weight: 700;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+      margin-bottom: 6px;
+    }
+
+    .meta-subtitle {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-bottom: 56px;
+      letter-spacing: 0.04em;
+    }
+
+    .meta-section-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--mark);
+      padding-bottom: 8px;
+    }
+
+    .dev-log {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .dev-entry {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .dev-entry-date {
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .dev-entry-time {
+      font-size: 0.6rem;
+      color: var(--muted);
+      opacity: 0.6;
+      letter-spacing: 0.04em;
+      margin-left: 8px;
+    }
+
+    .dev-entry-body {
+      font-size: 0.78rem;
+      line-height: 1.8;
+      max-width: 60ch;
+    }
+
+    .dev-entry-body p {
+      margin: 0 0 10px 0;
+    }
+
+    .dev-entry-body p:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main class="page meta-page">
+    <h1>/meta/dev_log</h1>
+    <p class="meta-subtitle">notes to myself about building this site. informal. may be useful to someone else someday.</p>
+
+    <p class="meta-section-label">entries</p>
+    <div class="dev-log">
+
+      <div class="dev-entry">
+        <span class="dev-entry-date">2026-03-10 <span class="dev-entry-time">6:30p</span></span>
+        <div class="dev-entry-body">
+          <p>added /b/</p>
+          <p>keeping all content static, until i can host the databases to make this site dynamic.i will own my own data and content for this site.</p>
+          <p>starting this page. will be notes, memos, reminders, specs, etc. this will just be a loose diary of the site as i build it.</p>
+        </div>
+        <span class="dev-entry-date">2026-03-10 <span class="dev-entry-time">5:30p</span></span>
+        <div class="dev-entry-body">
+          <p>keeping all content static, until i can host the databases to make this site dynamic.i will own my own data and content for this site.</p>
+          <p>starting this page. will be notes, memos, reminders, specs, etc. this will just be a loose diary of the site as i build it.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <button class="toggle" id="themeToggle" aria-label="Toggle colour mode"></button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

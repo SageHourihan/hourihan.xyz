@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>/b/ — hourihan.xyz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    .b-header {
+      margin-bottom: 48px;
+    }
+
+    .b-header h1 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .b-header p {
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .b-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .b-card {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .b-card-meta {
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .b-card a {
+      font-size: 0.95rem;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--mark);
+      transition: border-color 0.2s;
+    }
+
+    .b-card a:hover {
+      border-color: var(--ink);
+    }
+
+    .b-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main class="page">
+    <div class="b-header">
+      <h1>/b/</h1>
+      <p>random. stuff that doesn't fit anywhere else.</p>
+    </div>
+
+    <div class="b-list">
+
+      <!-- newest first -->
+      <div class="b-card">
+        <span class="b-card-meta">2026-03-10</span>
+        <a href="/b/hello-world/">hello world</a>
+        <p>welcome to hourihan.xyz, what it's about, and other ramblings.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <button class="toggle" id="themeToggle" aria-label="Toggle colour mode"></button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
