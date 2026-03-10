@@ -60,6 +60,23 @@
       font-style: italic;
       font-weight: 300;
     }
+
+    .manifesto-block a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      text-underline-offset: 3px;
+    }
+
+    .manifesto-block a::after {
+      content: " ↗";
+      font-size: 0.7em;
+      color: var(--muted);
+    }
+
+    .manifesto-block a:hover {
+      color: var(--muted);
+    }
   </style>
 </head>
 <body>
@@ -72,7 +89,7 @@
     <div class="manifesto">
       <div class="manifesto-block">
         <h3>what is this?</h3>
-        <p>a brain dump with a domain name. i miss the early days of the internet where everyone had their own personal site (shout out my childhood friend Luke for showing me freewebs). this is simply that, except i actually know how to write code now.</p>
+        <p>a brain dump with a domain name. i miss <a href="https://www.dictionary.com/browse/surfing-the-web" target="_blank" rel="noopener noreferrer">surfing the web</a> and really hate <a href="https://www.dictionary.com/browse/doomscrolling" target="_blank" rel="noopener noreferrer">doom scrolling.</a></p>
       </div>
       <div class="manifesto-block">
         <h3>the one guiding principle</h3>
