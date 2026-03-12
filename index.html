@@ -68,14 +68,68 @@
       text-underline-offset: 3px;
     }
 
-    .manifesto-block a::after {
-      content: " ↗";
-      font-size: 0.7em;
+.manifesto-block a:hover {
       color: var(--muted);
     }
 
-    .manifesto-block a:hover {
+    /* ── Bulletin ────────────────────────── */
+    .bulletin {
+      width: 100%;
+      max-width: 560px;
+      margin-top: 64px;
+      text-align: left;
+    }
+
+    .bulletin-rule {
+      border: none;
+      border-top: 1px solid var(--mark);
+      margin-bottom: 24px;
+      transition: border-color 0.4s;
+    }
+
+    .bulletin ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .bulletin li {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 300;
+      font-size: 0.85rem;
+      color: var(--ink);
+      transition: color 0.4s;
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+    }
+
+    .bulletin li::before {
+      content: "//";
       color: var(--muted);
+      flex-shrink: 0;
+      transition: color 0.4s;
+    }
+
+    .bulletin a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .bulletin a:hover {
+      color: var(--muted);
+    }
+
+    .bulletin .item-meta {
+      color: var(--muted);
+      font-size: 0.7rem;
+      transition: color 0.4s;
     }
   </style>
 </head>
@@ -96,6 +150,15 @@
         <p><em>i build for myself and no one else.</em> the moment i worry about optimizing this site for others i have lost sight of what this project is about.</p>
       </div>
     </div>
+
+    <section class="bulletin" aria-label="pinned">
+      <hr class="bulletin-rule" />
+      <ul>
+        <li><a href="/b/hello-world/">first post</a> <span class="item-meta">2026.03</span></li>
+        <li><a href="/now/">what i'm doing now</a></li>
+      </ul>
+    </section>
+
   </div>
 
   <button class="toggle" id="themeToggle" aria-label="Toggle colour mode"></button>

@@ -20,3 +20,6 @@ npm-debug.log*
 # Claude Code (local only)
 .claude/
 CLAUDE.md
+
+#ignore dev notes, will update dev log with them
+dev_notes.txt
